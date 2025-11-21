@@ -1,0 +1,34 @@
+scan_device_dps:
+  name: Scan Device DPS
+  description: Reverse engineer a Tuya device to discover all available Data Points (DPS) and their current values.
+  fields:
+    device_id:
+      name: Device ID
+      description: The Tuya device ID to scan
+      required: true
+      example: "bf1234567890abcdef"
+      selector:
+        text:
+
+monitor_device_realtime:
+  name: Monitor Device Real-Time
+  description: Monitor a Tuya device in real-time to capture all DPS changes. Useful for discovering what DPS changes when you interact with the device.
+  fields:
+    device_id:
+      name: Device ID
+      description: The Tuya device ID to monitor
+      required: true
+      example: "bf1234567890abcdef"
+      selector:
+        text:
+    duration:
+      name: Duration
+      description: How many seconds to monitor the device
+      required: false
+      default: 60
+      example: 120
+      selector:
+        number:
+          min: 10
+          max: 600
+          unit_of_measurement: seconds
