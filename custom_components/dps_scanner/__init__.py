@@ -1,4 +1,4 @@
-"""The Tuya WiFi Scanner integration."""
+"""The DPS Scanner integration."""
 import logging
 
 from homeassistant.config_entries import ConfigEntry
@@ -11,7 +11,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 async def async_setup(hass: HomeAssistant, config: dict):
-    """Set up the Tuya WiFi Scanner component."""
+    """Set up the DPS Scanner component."""
     hass.data.setdefault(DOMAIN, {})
     
     # Setup DPS scanning services
@@ -21,17 +21,22 @@ async def async_setup(hass: HomeAssistant, config: dict):
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
-    """Set up Tuya WiFi Scanner from a config entry."""
+    """Set up DPS Scanner from a config entry."""
     hass.data[DOMAIN][entry.entry_id] = entry.data
     
     _LOGGER.info(
         f"Tuya device configured: {entry.data.get('device_id')} at {entry.data.get('ip')}"
     )
     
+    # Forward to sensor platform
+    await hass.config_entries.async_forward_entry_setups(entry, ["sensor"])
+    
     return True
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry):
     """Unload a config entry."""
-    hass.data[DOMAIN].pop(entry.entry_id)
-    return True
+    unload_ok = await hass.config_entries.async_unload_platforms(entry, ["sensor"])
+    if unload_ok:
+        hass.data[DOMAIN].pop(entry.entry_id)
+    return unload_ok
