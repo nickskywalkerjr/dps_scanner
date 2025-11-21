@@ -1,4 +1,4 @@
-"""Constants for the Tuya WiFi Scanner integration."""
+"""Constants for the DPS Scanner integration."""
 
 # Domain
 DOMAIN = "dps_scanner"
