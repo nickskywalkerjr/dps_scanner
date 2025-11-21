@@ -1,4 +1,4 @@
-"""Config flow for Tuya WiFi Scanner integration."""
+"""Config flow for DPS Scanner integration."""
 import logging
 import voluptuous as vol
 
@@ -12,7 +12,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 class TuyaWifiScannerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for Tuya WiFi Scanner."""
+    """Handle a config flow for DPS Scanner."""
 
     VERSION = 1
 
@@ -175,7 +175,7 @@ class TuyaWifiScannerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
 
 class TuyaOptionsFlowHandler(config_entries.OptionsFlow):
-    """Handle options flow for Tuya WiFi Scanner."""
+    """Handle options flow for DPS Scanner."""
 
     def __init__(self, config_entry):
         """Initialize options flow."""
