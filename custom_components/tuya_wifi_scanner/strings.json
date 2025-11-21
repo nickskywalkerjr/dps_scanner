@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Scan for Tuya Devices",
+        "description": "Click Submit to scan your local network for Tuya devices.",
+        "data": {}
+      },
+      "select_device": {
+        "title": "Select Tuya Device",
+        "data": {
+          "device": "Device"
+        }
+      },
+      "device_key": {
+        "title": "Enter Device Key",
+        "description": "Enter the local key for device {device_id} at {ip}. You can get this from the Tuya IoT Platform.",
+        "data": {
+          "local_key": "Local Key"
+        }
+      }
+    },
+    "error": {
+      "no_devices_found": "No Tuya devices found on your network. Make sure your devices are powered on and connected to the same network.",
+      "scan_failed": "Failed to scan for devices. Check your network configuration.",
+      "invalid_key": "Invalid local key. The device rejected the connection. Please verify the key from Tuya IoT Platform.",
+      "cannot_connect": "Cannot connect to device. Check if the device is online and the key is correct."
+    },
+    "abort": {
+      "already_configured": "This device is already configured.",
+      "no_new_devices": "All discovered devices are already configured. No new devices to add."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tuya WiFi Scanner Options",
+        "data": {
+          "scan_interval": "Scan interval (seconds)"
+        }
+      }
+    }
+  }
+}

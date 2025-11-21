@@ -1,0 +1,6 @@
+{
+  "name": "Tuya WiFi Scanner",
+  "content_in_root": false,
+  "domains": ["tuya_wifi_scanner"],
+  "iot_class": "local_polling"
+}
