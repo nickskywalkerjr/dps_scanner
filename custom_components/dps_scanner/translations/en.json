@@ -34,7 +34,7 @@
   "options": {
     "step": {
       "init": {
-        "title": "Tuya WiFi Scanner Options",
+        "title": "DPS Scanner Options",
         "data": {
           "scan_interval": "Scan interval (seconds)"
         }
